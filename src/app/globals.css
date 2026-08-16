@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #FAFAF6;
+  --paper-dim: #F1EFE7;
+  --ink: #211F1C;
+  --ink-soft: #5A564E;
+  --sage: #4F6B52;
+  --sage-deep: #33452F;
+  --gold: #C08B2E;
+  --line: #E2DED2;
+  --card: #FFFFFF;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-gold: var(--gold);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--sage);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--sage-deep);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
