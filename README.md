@@ -1,59 +1,40 @@
-# Elvyy, Free Tools + Blog with Built-in Admin
+# Elvyy
 
-Built with Next.js 16 (App Router), TypeScript, Tailwind CSS v4, and Sanity (embedded admin panel).
+Elvyy is a free tools and blog website. It offers a set of everyday utility tools with no
+usage limits, alongside articles covering money, health, productivity, and general lifestyle
+topics. Built and maintained by Fatima Batool.
 
-## What's included
+## Live site
 
-- **4 working tools**: Word Counter, QR Code Generator, Age Calculator, Unit Converter
-- **Blog** that reads posts from Sanity once connected (shows 4 sample posts until then)
-- **Admin panel built into the site** at `/admin`, once you write a blog post there and publish,
-  it appears on `/blog` automatically within a minute
-- Required pages: About, Contact, Privacy Policy, Terms of Service, all linked in header and footer
-- Auto generated sitemap.xml and robots.txt
+https://elvyy.com
 
-## One time setup
+## Features
 
-```bash
-npm install
-```
+Free tools with no signup, no limits, and no paywall, including a word counter, QR code
+generator, age calculator, and unit converter.
 
-Create `.env.local` in the project root:
-```
-NEXT_PUBLIC_SANITY_PROJECT_ID=wr9qd7c1
-NEXT_PUBLIC_SANITY_DATASET=production
-```
+Blog section with SEO controls for each post, including a custom meta title, meta description,
+focus keyword, and image alt text.
 
-Run:
-```bash
-npm run dev -- --webpack
-```
+Built in admin panel at /admin for writing and publishing blog posts without touching code.
 
-Visit http://localhost:3000 for the site, and http://localhost:3000/admin to log in and manage
-blog posts (same Google account used on sanity.io).
+Clean, minimal design with a custom color palette and typography.
 
-## Deploy (free), single site, single domain
+Sitemap and robots.txt generated automatically for search engines.
 
-1. Push this whole folder to a GitHub repository.
-2. Go to https://vercel.com, "Add New Project", import the repo.
-3. Add the two environment variables above in Vercel: Project > Settings > Environment Variables.
-4. Deploy.
-5. In Vercel: Project > Settings > Domains, add `elvyy.com` and `www.elvyy.com`.
-6. In Spaceship DNS settings:
-   - **A record**: `@` to `76.76.21.21`
-   - **CNAME record**: `www` to `cname.vercel-dns.com`
+Required legal pages included: About, Contact, Privacy Policy, and Terms of Service.
 
-Once live, both `elvyy.com` and `elvyy.com/admin` work from the same deployment, no second site,
-no second domain needed.
+Fully responsive layout for mobile, tablet, and desktop.
 
-## Before applying for AdSense
+## Tech stack
 
-- [ ] Publish at least 15 to 20 real blog posts through `/admin`
-- [ ] Confirm Contact page emails are correct
-- [ ] Site should be live for a few weeks with real content before applying
+Next.js 16 with the App Router
+TypeScript
+Tailwind CSS v4
+Sanity, used as the content management system for blog posts
+Vercel, used for hosting and deployment
 
-## Adding a new tool (requires code)
+## License
 
-Tools are interactive code, not content, so they can't be added through `/admin`. Create a
-component in `src/components/tools/`, register it in `src/lib/tools.ts`, and add a page at
-`src/app/tools/<slug>/page.tsx` following the pattern of the existing four tools. Ask any time
-and a new tool can be built.
+All content and code in this repository belong to Elvyy and Fatima Batool. Not intended for
+redistribution without permission.
