@@ -1,10 +1,28 @@
 import Link from "next/link";
 import { tools } from "@/lib/tools";
-import { posts } from "@/lib/posts";
+import { posts as staticPosts } from "@/lib/posts";
+import { getSanityPosts } from "@/sanity/lib/queries";
+import { isSanityConfigured } from "@/sanity/lib/client";
 import ToolFinder from "@/components/ToolFinder";
 
-export default function Home() {
-  const latestPosts = posts.slice(0, 3);
+export const revalidate = 60;
+
+export default async function Home() {
+  const sanityPosts = await getSanityPosts();
+
+  const latestPosts = isSanityConfigured
+    ? sanityPosts.slice(0, 3).map((p) => ({
+        slug: p.slug,
+        title: p.title,
+        excerpt: p.excerpt,
+        category: p.category,
+      }))
+    : staticPosts.slice(0, 3).map((p) => ({
+        slug: p.slug,
+        title: p.title,
+        excerpt: p.excerpt,
+        category: p.category,
+      }));
 
   return (
     <div>
@@ -115,7 +133,7 @@ export default function Home() {
                   {post.excerpt}
                 </p>
                 <p className="mt-5 font-mono text-xs text-ink-soft">
-                  {post.readTime}
+                  Read article →
                 </p>
               </Link>
             ))}
