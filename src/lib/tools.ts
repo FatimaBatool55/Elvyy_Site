@@ -39,6 +39,14 @@ export const tools: Tool[] = [
       "Quickly convert between metric and imperial units for length, weight, and temperature.",
     category: "Everyday",
   },
+  {
+    slug: "gpa-calculator",
+    name: "GPA Calculator",
+    short: "Calculate GPA and plan future grades",
+    description:
+      "Calculate your grade point average from courses and credits, with a custom grade scale and a planner for the GPA you need in future courses.",
+    category: "Student",
+  },
 ];
 
 export function getTool(slug: string) {
