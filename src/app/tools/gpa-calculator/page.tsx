@@ -15,17 +15,26 @@ export default function Page() {
   return (
     <ToolShell tool={tool}>
       <GpaCalculator />
-      <div className="mt-10 rounded-lg border border-line bg-paper-dim p-5">
-        <p className="text-sm text-ink-soft">
-          Want to raise your GPA, not just track it?{" "}
-          <Link
-            href="/blog/study-habits-that-raise-college-gpa"
-            className="text-sage-deep hover:underline"
-          >
-            Read: Study habits that raise college GPA →
-          </Link>
-        </p>
-      </div>
+      <Link
+        href="/blog/study-habits-that-raise-college-gpa"
+        className="mt-10 flex items-center justify-between gap-4 rounded-lg border border-sage bg-card p-6 transition-colors hover:border-sage-deep"
+      >
+        <div>
+          <p className="font-mono text-[11px] uppercase tracking-wide text-sage-deep">
+            Related reading
+          </p>
+          <p className="mt-1 font-display text-xl text-ink">
+            Study habits that raise college GPA
+          </p>
+          <p className="mt-1 text-sm text-ink-soft">
+            Practical habits that make the biggest difference once your GPA
+            is calculated.
+          </p>
+        </div>
+        <span className="shrink-0 font-mono text-sm text-sage-deep">
+          Read →
+        </span>
+      </Link>
     </ToolShell>
   );
 }
