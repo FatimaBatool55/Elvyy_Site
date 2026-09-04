@@ -23,14 +23,6 @@ export const tools: Tool[] = [
       "Calculate your grade point average from courses and credits, with a custom grade scale and a planner for the GPA you need in future courses.",
     category: "Student",
   },
-  {
-    slug: "citation-generator",
-    name: "Citation Generator",
-    short: "Generate APA, MLA, Harvard, Chicago & IEEE citations",
-    description:
-      "Create properly formatted citations for websites, books, journal articles, videos, and news articles in five major citation styles.",
-    category: "Student",
-  },
 ];
 
 export function getTool(slug: string) {
