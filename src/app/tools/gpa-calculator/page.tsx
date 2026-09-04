@@ -5,9 +5,9 @@ import GpaCalculator from "@/components/tools/GpaCalculator";
 import { getTool } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "GPA Calculator",
+  title: "GPA Calculator — 100% Free, No Login",
   description:
-    "Free GPA calculator with a custom grade scale and a planner for the GPA needed in future courses.",
+    "Free GPA calculator, 100% free with no login and no usage limit. Calculate your grade point average and plan the GPA you need in future courses.",
 };
 
 export default function Page() {
