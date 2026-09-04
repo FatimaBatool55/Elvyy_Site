@@ -23,6 +23,14 @@ export const tools: Tool[] = [
       "Calculate your grade point average from courses and credits, with a custom grade scale and a planner for the GPA you need in future courses.",
     category: "Student",
   },
+  {
+    slug: "final-grade-calculator",
+    name: "Final Grade Calculator",
+    short: "Find the score you need on what's left",
+    description:
+      "Enter your completed grades and their weights to find exactly what score you need on your remaining work to hit your target grade.",
+    category: "Student",
+  },
 ];
 
 export function getTool(slug: string) {
