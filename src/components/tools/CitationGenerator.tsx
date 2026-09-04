@@ -283,6 +283,83 @@ export default function CitationGenerator() {
   const [style, setStyle] = useState<Style>("apa");
   const [fields, setFields] = useState<Fields>(emptyFields);
   const [copied, setCopied] = useState(false);
+  const [extractUrl, setExtractUrl] = useState("");
+  const [extracting, setExtracting] = useState(false);
+  const [extractError, setExtractError] = useState("");
+  const [extractedFields, setExtractedFields] = useState<Set<string>>(
+    new Set()
+  );
+
+  const canAutoExtract =
+    sourceType === "website" || sourceType === "news" || sourceType === "video";
+
+  async function handleExtract() {
+    if (!extractUrl.trim()) return;
+    setExtracting(true);
+    setExtractError("");
+    setExtractedFields(new Set());
+
+    try {
+      const res = await fetch("/api/extract-metadata", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: extractUrl.trim() }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setExtractError(
+          data.error || "Could not extract details from this page."
+        );
+        setExtracting(false);
+        return;
+      }
+
+      const found = new Set<string>();
+      setFields((prev) => {
+        const next = { ...prev };
+        if (data.title) {
+          next.title = data.title;
+          found.add("title");
+        }
+        if (data.author) {
+          next.authors = data.author;
+          found.add("authors");
+        }
+        if (data.siteName) {
+          next.siteName = data.siteName;
+          next.publicationName = data.siteName;
+          found.add("siteName");
+        }
+        if (data.year) {
+          next.year = data.year;
+          found.add("year");
+        }
+        if (data.fullDate) {
+          next.fullDate = data.fullDate;
+          found.add("fullDate");
+        }
+        if (data.url) {
+          next.url = data.url;
+          found.add("url");
+        }
+        return next;
+      });
+      setExtractedFields(found);
+
+      if (!data.author) {
+        setExtractError(
+          "This page didn't have a clear author listed. Title and site details were filled in, add the author manually below."
+        );
+      }
+    } catch {
+      setExtractError(
+        "Could not reach this page. Check the URL or enter the details manually below."
+      );
+    } finally {
+      setExtracting(false);
+    }
+  }
 
   function update<K extends keyof Fields>(key: K, value: string) {
     setFields((prev) => ({ ...prev, [key]: value }));
@@ -356,6 +433,44 @@ export default function CitationGenerator() {
           </select>
         </div>
       </div>
+
+      {canAutoExtract && (
+        <div className="mt-6 rounded-lg border border-line bg-paper-dim p-5">
+          <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
+            Auto-fill from a link
+          </p>
+          <p className="mt-1 text-xs text-ink-soft">
+            Paste a page URL and details like title, author, and site name
+            will be pulled in where available. Always double check the
+            result, not every page provides all of this information.
+          </p>
+          <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+            <input
+              type="text"
+              value={extractUrl}
+              onChange={(e) => setExtractUrl(e.target.value)}
+              placeholder="https://example.com/article"
+              className="flex-1 rounded-lg border border-line bg-card p-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-sage"
+            />
+            <button
+              onClick={handleExtract}
+              disabled={extracting || !extractUrl.trim()}
+              className="rounded-lg bg-sage-deep px-5 py-3 font-mono text-xs uppercase tracking-wide text-paper transition-opacity hover:opacity-90 disabled:opacity-50"
+            >
+              {extracting ? "Extracting..." : "Extract details"}
+            </button>
+          </div>
+          {extractError && (
+            <p className="mt-2 text-xs text-ink-soft">{extractError}</p>
+          )}
+          {extractedFields.size > 0 && !extractError && (
+            <p className="mt-2 text-xs text-sage-deep">
+              Details filled in below, review and edit anything that needs
+              correcting.
+            </p>
+          )}
+        </div>
+      )}
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <Field
