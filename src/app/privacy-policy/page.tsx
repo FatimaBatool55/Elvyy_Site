@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="font-display text-xl text-ink">Contact</h2>
           <p className="mt-2">
-            Questions about this policy can be sent to hello@elvyy.com.
+            Questions about this policy can be sent to hajabatool01@gmail.com.
           </p>
         </section>
       </div>
