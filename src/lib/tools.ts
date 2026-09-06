@@ -31,6 +31,14 @@ export const tools: Tool[] = [
       "Enter your completed grades and their weights to find exactly what score you need on your remaining work to hit your target grade.",
     category: "Student",
   },
+  {
+    slug: "study-plan-spreader",
+    name: "Study Plan Spreader",
+    short: "Turn deadlines into a daily study schedule",
+    description:
+      "Add your assignments, exams, and their deadlines to get a realistic day-by-day study plan that spreads the work evenly and flags overload.",
+    category: "Student",
+  },
 ];
 
 export function getTool(slug: string) {
