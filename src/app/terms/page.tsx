@@ -54,7 +54,7 @@ export default function TermsPage() {
         <section>
           <h2 className="font-display text-xl text-ink">Contact</h2>
           <p className="mt-2">
-            Questions about these terms can be sent to hello@elvyy.com.
+            Questions about these terms can be sent to hajabatool01@gmail.com.
           </p>
         </section>
       </div>
