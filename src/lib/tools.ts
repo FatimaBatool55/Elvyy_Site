@@ -39,6 +39,14 @@ export const tools: Tool[] = [
       "Add your assignments, exams, and their deadlines to get a realistic day-by-day study plan that spreads the work evenly and flags overload.",
     category: "Student",
   },
+  {
+    slug: "task-splitter",
+    name: "Group Project Task Splitter",
+    short: "Fairly split tasks across group members",
+    description:
+      "List your tasks with an effort score and your group members, and get a fair, balanced split with imbalance flagged automatically.",
+    category: "Student",
+  },
 ];
 
 export function getTool(slug: string) {
