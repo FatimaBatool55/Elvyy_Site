@@ -6,7 +6,7 @@ import { getTool } from "@/lib/tools";
 export const metadata: Metadata = {
   title: "Readability Score Checker — 100% Free, No Login",
   description:
-    "Free readability checker, 100% free with no login and no usage limit. Get grade level, sentence length, passive voice percentage, and complex sentences highlighted.";
+    "Free readability checker, 100% free with no login and no usage limit. Get grade level, sentence length, passive voice percentage, and complex sentences highlighted.",
 };
 
 export default function Page() {
