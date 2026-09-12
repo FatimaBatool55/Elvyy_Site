@@ -47,6 +47,22 @@ export const tools: Tool[] = [
       "List your tasks with an effort score and your group members, and get a fair, balanced split with imbalance flagged automatically.",
     category: "Student",
   },
+  {
+    slug: "keyword-density-checker",
+    name: "Keyword Density Checker",
+    short: "Check keyword frequency in your content",
+    description:
+      "Paste your content to see how often each word and phrase appears, with keyword stuffing flagged automatically.",
+    category: "SEO",
+  },
+  {
+    slug: "readability-checker",
+    name: "Readability Score Checker",
+    short: "Check grade level and sentence complexity",
+    description:
+      "Paste your writing to get a reading ease score, grade level, passive voice percentage, and complex sentences highlighted.",
+    category: "SEO",
+  },
 ];
 
 export function getTool(slug: string) {
