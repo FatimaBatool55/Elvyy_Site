@@ -30,27 +30,36 @@ export async function POST(req: NextRequest) {
 
     const data = await response.json();
 
-    const matches = (data.matches || []).map(
-      (m: {
-        message: string;
-        shortMessage?: string;
-        offset: number;
-        length: number;
-        replacements?: { value: string }[];
-        rule?: { category?: { id?: string; name?: string } };
-      }) => ({
-        message: m.shortMessage || m.message,
-        offset: m.offset,
-        length: m.length,
-        replacements: (m.replacements || []).slice(0, 3).map((r) => r.value),
-        category: m.rule?.category?.id || "OTHER",
-        categoryName: m.rule?.category?.name || "Other",
-        context: trimmed.slice(
-          Math.max(0, m.offset - 25),
-          m.offset + m.length + 25
-        ),
-      })
-    );
+    const matches = (data.matches || [])
+      .filter(
+        (m: { rule?: { category?: { id?: string } } }) =>
+          m.rule?.category?.id !== "TYPOGRAPHY"
+      )
+      .map(
+        (m: {
+          message: string;
+          shortMessage?: string;
+          offset: number;
+          length: number;
+          replacements?: { value: string }[];
+          rule?: { category?: { id?: string; name?: string } };
+        }) => ({
+          message: m.shortMessage || m.message,
+          offset: m.offset,
+          length: m.length,
+          replacements: (m.replacements || []).slice(0, 3).map((r) => r.value),
+          category: m.rule?.category?.id || "OTHER",
+          categoryName: m.rule?.category?.name || "Other",
+          context: trimmed.slice(
+            Math.max(0, m.offset - 25),
+            m.offset + m.length + 25
+          ),
+        })
+      )
+      .filter(
+        (m: { replacements: string[]; category: string }) =>
+          m.replacements.length > 0 || m.category !== "TYPOGRAPHY"
+      );
 
     return NextResponse.json({ matches });
   } catch {
