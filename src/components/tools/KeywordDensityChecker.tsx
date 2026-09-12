@@ -52,22 +52,30 @@ function countNgrams(
 function densityStatus(
   density: number,
   totalWords: number
-): { label: string; color: string; bg: string } {
+): { label: string; dot: string; textColor: string } {
   const lengthFactor = totalWords < 300 ? 1.4 : totalWords < 800 ? 1.15 : 1;
   const goodMax = 1.5 * lengthFactor;
   const optimalMax = 2.5 * lengthFactor;
   const highMax = 3.5 * lengthFactor;
 
   if (density <= goodMax) {
-    return { label: "Good", color: "text-sage-deep", bg: "bg-sage/10" };
+    return { label: "Good", dot: "bg-sage-deep", textColor: "text-sage-deep" };
   }
   if (density <= optimalMax) {
-    return { label: "Optimal", color: "text-sage-deep", bg: "bg-sage/10" };
+    return {
+      label: "Optimal",
+      dot: "bg-sage-deep",
+      textColor: "text-sage-deep",
+    };
   }
   if (density <= highMax) {
-    return { label: "Getting high", color: "text-gold", bg: "bg-gold/10" };
+    return { label: "Getting high", dot: "bg-gold", textColor: "text-gold" };
   }
-  return { label: "Overstuffed", color: "text-red-700", bg: "bg-red-50" };
+  return {
+    label: "Overstuffed",
+    dot: "bg-red-700",
+    textColor: "text-red-700",
+  };
 }
 
 function computeBalanceScore(
@@ -244,11 +252,17 @@ function KeywordTable({
           return (
             <div
               key={p.phrase}
-              className={`flex items-center justify-between rounded border border-line px-3 py-2 text-sm ${status.bg}`}
+              className="flex items-center justify-between rounded border border-line bg-card px-3 py-2 text-sm"
             >
-              <span className="text-ink">{p.phrase}</span>
-              <span className={`font-mono text-xs ${status.color}`}>
-                {p.count}× · {p.density.toFixed(1)}%
+              <span className="flex items-center gap-2 text-ink">
+                <span className={`h-2 w-2 shrink-0 rounded-full ${status.dot}`} />
+                {p.phrase}
+              </span>
+              <span className="flex items-center gap-2 font-mono text-xs">
+                <span className={status.textColor}>{status.label}</span>
+                <span className="text-ink-soft">
+                  {p.count}× · {p.density.toFixed(1)}%
+                </span>
               </span>
             </div>
           );
