@@ -52,8 +52,23 @@ function fleschDescription(score: number): string {
   return "Very difficult to read";
 }
 
+type GrammarIssue = {
+  message: string;
+  offset: number;
+  length: number;
+  replacements: string[];
+  category: string;
+  categoryName: string;
+  context: string;
+};
+
 export default function ReadabilityChecker() {
   const [text, setText] = useState("");
+  const [grammarIssues, setGrammarIssues] = useState<GrammarIssue[] | null>(
+    null
+  );
+  const [checkingGrammar, setCheckingGrammar] = useState(false);
+  const [grammarError, setGrammarError] = useState("");
 
   const analysis = useMemo(() => {
     const trimmed = text.trim();
@@ -95,11 +110,43 @@ export default function ReadabilityChecker() {
     };
   }, [text]);
 
+  async function handleGrammarCheck() {
+    if (!text.trim()) return;
+    setCheckingGrammar(true);
+    setGrammarError("");
+    setGrammarIssues(null);
+
+    try {
+      const res = await fetch("/api/check-grammar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setGrammarError(data.error || "Could not check grammar right now.");
+        setCheckingGrammar(false);
+        return;
+      }
+
+      setGrammarIssues(data.matches);
+    } catch {
+      setGrammarError("Could not reach the grammar checker. Try again shortly.");
+    } finally {
+      setCheckingGrammar(false);
+    }
+  }
+
   return (
     <div>
       <textarea
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => {
+          setText(e.target.value);
+          setGrammarIssues(null);
+          setGrammarError("");
+        }}
         placeholder="Paste your writing here to check its readability..."
         className="h-64 w-full resize-y rounded-lg border border-line bg-card p-4 text-sm leading-relaxed text-ink focus:outline-none focus:ring-2 focus:ring-sage"
       />
@@ -165,6 +212,55 @@ export default function ReadabilityChecker() {
               </p>
             </div>
           )}
+
+          <div className="mt-10 border-t border-line pt-8">
+            <div className="flex items-center justify-between">
+              <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
+                Grammar & spelling check
+              </p>
+              <button
+                onClick={handleGrammarCheck}
+                disabled={checkingGrammar}
+                className="rounded-lg bg-sage-deep px-4 py-2 font-mono text-xs uppercase tracking-wide text-paper transition-opacity hover:opacity-90 disabled:opacity-50"
+              >
+                {checkingGrammar ? "Checking..." : "Check grammar"}
+              </button>
+            </div>
+
+            {grammarError && (
+              <p className="mt-3 text-sm text-ink-soft">{grammarError}</p>
+            )}
+
+            {grammarIssues && grammarIssues.length === 0 && (
+              <p className="mt-3 text-sm text-sage-deep">
+                No grammar or spelling issues found.
+              </p>
+            )}
+
+            {grammarIssues && grammarIssues.length > 0 && (
+              <div className="mt-4 space-y-2">
+                {grammarIssues.map((issue, i) => (
+                  <div
+                    key={i}
+                    className="rounded-lg border border-line bg-card p-4"
+                  >
+                    <p className="font-mono text-[10px] uppercase tracking-wide text-ink-soft">
+                      {issue.categoryName}
+                    </p>
+                    <p className="mt-1 text-sm text-ink">{issue.message}</p>
+                    <p className="mt-2 text-sm italic text-ink-soft">
+                      &ldquo;...{issue.context}...&rdquo;
+                    </p>
+                    {issue.replacements.length > 0 && (
+                      <p className="mt-2 text-xs text-sage-deep">
+                        Suggestion: {issue.replacements.join(", ")}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </>
       )}
     </div>
