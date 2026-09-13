@@ -63,6 +63,30 @@ export const tools: Tool[] = [
       "Paste your writing to get a reading ease score, grade level, passive voice percentage, and complex sentences highlighted.",
     category: "SEO",
   },
+  {
+    slug: "meta-description-generator",
+    name: "AI Meta Description Generator",
+    short: "Generate SEO meta descriptions with AI",
+    description:
+      "Paste your blog content to get 4 AI-generated, SEO-optimized meta description options in the ideal length range.",
+    category: "SEO",
+  },
+  {
+    slug: "blog-title-generator",
+    name: "AI Blog Title Generator",
+    short: "Generate SEO blog titles with AI",
+    description:
+      "Enter a topic or keyword to get 10 AI-generated, SEO-friendly blog title options from different angles.",
+    category: "SEO",
+  },
+  {
+    slug: "ai-blog-generator",
+    name: "AI Blog Generator",
+    short: "Generate a full blog draft with AI",
+    description:
+      "Enter a topic and word count, choose from two AI-generated outlines, and get a full blog post draft to edit and publish.",
+    category: "SEO",
+  },
 ];
 
 export function getTool(slug: string) {
