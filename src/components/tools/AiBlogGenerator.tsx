@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Outline = { title: string; headings: string[] };
 
@@ -193,8 +194,8 @@ export default function AiBlogGenerator() {
               {copied ? "Copied" : "Copy blog text"}
             </button>
           </div>
-          <div className="mt-3 rounded-lg border border-line bg-card p-5 text-sm leading-relaxed text-ink [&_h1]:font-display [&_h1]:text-2xl [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:font-display [&_h2]:text-xl [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:font-display [&_h3]:text-lg [&_h3]:mt-5 [&_h3]:mb-2 [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-1 [&_strong]:font-semibold [&_strong]:text-ink [&_hr]:my-6 [&_hr]:border-line">
-              <ReactMarkdown>{content}</ReactMarkdown>
+          <div className="mt-3 overflow-x-auto rounded-lg border border-line bg-card p-5 text-sm leading-relaxed text-ink [&_h1]:font-display [&_h1]:text-2xl [&_h1]:mt-6 [&_h1]:mb-3 [&_h2]:font-display [&_h2]:text-xl [&_h2]:mt-6 [&_h2]:mb-3 [&_h3]:font-display [&_h3]:text-lg [&_h3]:mt-5 [&_h3]:mb-2 [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-1 [&_strong]:font-semibold [&_strong]:text-ink [&_hr]:my-6 [&_hr]:border-line [&_table]:w-full [&_table]:border-collapse [&_table]:mb-4 [&_th]:border [&_th]:border-line [&_th]:bg-paper-dim [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_td]:border [&_td]:border-line [&_td]:px-3 [&_td]:py-2 [&_td]:align-top">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
           </div>
           <button
             onClick={handleStartOver}
