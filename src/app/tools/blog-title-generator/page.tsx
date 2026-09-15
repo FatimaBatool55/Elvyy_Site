@@ -4,9 +4,9 @@ import BlogTitleGenerator from "@/components/tools/BlogTitleGenerator";
 import { getTool } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "AI Blog Title Generator — 100% Free, No Login",
+  title: "AI Blog Title Generator",
   description:
-    "Free AI blog title generator, 100% free with no login and no usage limit. Enter a topic to get 10 SEO-friendly title options from different angles.",
+    "Enter a topic and get 10 SEO-friendly title ideas. Unlimited free, no account needed.",
 };
 
 export default function Page() {
