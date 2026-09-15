@@ -4,7 +4,7 @@ import AiBlogGenerator from "@/components/tools/AiBlogGenerator";
 import { getTool } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "AI Blog Generator",
+  title: "AI Blog Generator, 100% Free, No Login",
   description:
     "Pick a topic, choose an outline, get a full blog draft. Unlimited free, no account needed.",
 };
