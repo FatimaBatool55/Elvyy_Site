@@ -12,29 +12,32 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const apiKey = process.env.MISTRAL_API_KEY;
+    const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
-        { error: "AI is not configured yet. Add MISTRAL_API_KEY to your environment variables." },
+        { error: "AI is not configured yet. Add GROQ_API_KEY to your environment variables." },
         { status: 500 }
       );
     }
 
     const prompt = `Generate 10 SEO-friendly blog title options for the topic: "${topic.trim()}". Use a mix of angles: question-based, listicle (with numbers), how-to, comparison, and curiosity-driven. Return ONLY a valid JSON array of 10 strings, nothing else, no markdown formatting.`;
 
-    const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "mistral-small-latest",
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.8,
-      }),
-      signal: AbortSignal.timeout(30000),
-    });
+    const response = await fetch(
+      "https://api.groq.com/openai/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: "openai/gpt-oss-120b",
+          messages: [{ role: "user", content: prompt }],
+          temperature: 0.8,
+        }),
+        signal: AbortSignal.timeout(30000),
+      }
+    );
 
     if (!response.ok) {
       if (response.status === 429) {
