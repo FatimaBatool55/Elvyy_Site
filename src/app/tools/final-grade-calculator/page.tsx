@@ -4,7 +4,7 @@ import FinalGradeCalculator from "@/components/tools/FinalGradeCalculator";
 import { getTool } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "Final Grade Calculator",
+  title: "Final Grade Calculator, 100% Free, No Login",
   description:
     "Find the exact score you need on remaining work to hit your target grade. Unlimited free, no account needed.",
 };
