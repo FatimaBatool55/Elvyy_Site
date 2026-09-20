@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import ToolShell from "@/components/ToolShell";
 import GpaCalculator from "@/components/tools/GpaCalculator";
@@ -15,26 +14,20 @@ export default function Page() {
   return (
     <ToolShell tool={tool}>
       <GpaCalculator />
-      <Link
-        href="/blog/study-habits-that-raise-college-gpa"
-        className="mt-10 flex items-center justify-between gap-4 rounded-lg border border-sage bg-card p-6 transition-colors hover:border-sage-deep"
-      >
+      <div className="mt-12 border-t border-line pt-10 space-y-6 text-sm text-ink-soft leading-relaxed max-w-2xl">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-wide text-sage-deep">
-            Related reading
-          </p>
-          <p className="mt-1 font-display text-xl text-ink">
-            Study habits that raise college GPA
-          </p>
-          <p className="mt-1 text-sm text-ink-soft">
-            Practical habits that make the biggest difference once your GPA
-            is calculated.
-          </p>
+          <p className="font-mono text-[11px] uppercase tracking-wide text-ink mb-2">What is GPA and how is it calculated</p>
+          <p>GPA (Grade Point Average) is the standard way universities measure academic performance. Each letter grade carries a point value: A is 4.0, B is 3.0, C is 2.0, and so on. Your GPA is the weighted average of these points across all your courses, where credits act as the weight. A 3-credit course counts three times more than a 1-credit course.</p>
         </div>
-        <span className="shrink-0 font-mono text-sm text-sage-deep">
-          Read →
-        </span>
-      </Link>
+        <div>
+          <p className="font-mono text-[11px] uppercase tracking-wide text-ink mb-2">When to use this calculator</p>
+          <p>Use it at the end of each semester to track your cumulative GPA, before registering for next semester to plan which courses will help or hurt your average, and when deciding whether to retake a course. The planning tab shows exactly what average you need in remaining courses to hit a target GPA.</p>
+        </div>
+        <div>
+          <p className="font-mono text-[11px] uppercase tracking-wide text-ink mb-2">Tips for improving your GPA</p>
+          <p>Focus on courses with high credit hours first since they affect your GPA most. A B in a 4-credit course moves your GPA more than an A in a 1-credit elective. If your school allows grade replacement for retaken courses, use the settings to adjust the scale and see the exact impact before committing.</p>
+        </div>
+      </div>
     </ToolShell>
   );
 }
