@@ -1,9 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Link",
+            value:
+              "<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
-      // Old tools that were deleted — redirect to tools listing
       {
         source: "/tools/age-calculator",
         destination: "/tools",
@@ -19,8 +32,6 @@ const nextConfig: NextConfig = {
         destination: "/tools",
         permanent: true,
       },
-
-      // Old placeholder blog posts — redirect to blog listing
       {
         source: "/blog/better-sleep-without-gadgets",
         destination: "/blog",
@@ -36,8 +47,6 @@ const nextConfig: NextConfig = {
         destination: "/blog",
         permanent: true,
       },
-
-      // Sanity internal product URLs — redirect to homepage
       {
         source: "/products/:path*",
         destination: "/",
