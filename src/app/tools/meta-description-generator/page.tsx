@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "AI Meta Description Generator, 100% Free, No Login",
   description:
     "Paste your blog content to get 4 SEO-optimized meta description options. Unlimited free, no account needed.",
+  alternates: { canonical: "/tools/meta-description-generator" },
+  openGraph: {
+    title: "AI Meta Description Generator, 100% Free, No Login",
+    description:
+      "Paste your blog content to get 4 SEO-optimized meta description options. Unlimited free, no account needed.",
+    url: "https://elvyy.com/tools/meta-description-generator",
+  },
 };
 
 export default function Page() {
