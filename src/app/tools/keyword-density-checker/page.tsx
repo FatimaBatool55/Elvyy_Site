@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Keyword Density Checker, 100% Free, No Login",
   description:
     "Paste content to see keyword frequency and catch overstuffing. Unlimited free, no account needed.",
+  alternates: { canonical: "/tools/keyword-density-checker" },
+  openGraph: {
+    title: "Keyword Density Checker, 100% Free, No Login",
+    description:
+      "Paste content to see keyword frequency and catch overstuffing. Unlimited free, no account needed.",
+    url: "https://elvyy.com/tools/keyword-density-checker",
+  },
 };
 
 export default function Page() {
