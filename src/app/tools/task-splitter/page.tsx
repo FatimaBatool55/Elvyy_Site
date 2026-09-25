@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Group Project Task Splitter, 100% Free, No Login",
   description:
     "Balance tasks fairly across group members and flag uneven loads. Unlimited free, no account needed.",
+  alternates: { canonical: "/tools/task-splitter" },
+  openGraph: {
+    title: "Group Project Task Splitter, 100% Free, No Login",
+    description:
+      "Balance tasks fairly across group members and flag uneven loads. Unlimited free, no account needed.",
+    url: "https://elvyy.com/tools/task-splitter",
+  },
 };
 
 export default function Page() {
