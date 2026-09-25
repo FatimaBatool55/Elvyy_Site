@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "GPA Calculator, 100% Free, No Login",
   description:
     "Calculate your GPA across courses and plan future grades. Unlimited free, no account needed.",
+  alternates: { canonical: "/tools/gpa-calculator" },
+  openGraph: {
+    title: "GPA Calculator, 100% Free, No Login",
+    description:
+      "Calculate your GPA across courses and plan future grades. Unlimited free, no account needed.",
+    url: "https://elvyy.com/tools/gpa-calculator",
+  },
 };
 
 export default function Page() {
