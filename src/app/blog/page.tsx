@@ -7,6 +7,12 @@ import { isSanityConfigured } from "@/sanity/lib/client";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Articles on money, health, and everyday life from Elvyy.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog",
+    description: "Articles on money, health, and everyday life from Elvyy.",
+    url: "https://elvyy.com/blog",
+  },
 };
 
 export const revalidate = 60;
