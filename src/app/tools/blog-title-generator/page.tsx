@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "AI Blog Title Generator, 100% Free, No Login",
   description:
     "Enter a topic and get 10 SEO-friendly title ideas. Unlimited free, no account needed.",
+  alternates: { canonical: "/tools/blog-title-generator" },
+  openGraph: {
+    title: "AI Blog Title Generator, 100% Free, No Login",
+    description:
+      "Enter a topic and get 10 SEO-friendly title ideas. Unlimited free, no account needed.",
+    url: "https://elvyy.com/tools/blog-title-generator",
+  },
 };
 
 export default function Page() {
