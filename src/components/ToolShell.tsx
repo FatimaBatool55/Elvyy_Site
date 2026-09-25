@@ -10,6 +10,24 @@ export default function ToolShell({
 }) {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: tool.name,
+            description: tool.description,
+            url: `https://elvyy.com/tools/${tool.slug}`,
+            applicationCategory: "UtilityApplication",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }),
+        }}
+      />
       <Link
         href="/tools"
         className="font-mono text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep"
