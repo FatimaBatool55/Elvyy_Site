@@ -5,6 +5,12 @@ import { tools } from "@/lib/tools";
 export const metadata: Metadata = {
   title: "All Tools",
   description: "Every free tool on Elvyy, in one place. No limits, no signups.",
+  alternates: { canonical: "/tools" },
+  openGraph: {
+    title: "All Tools",
+    description: "Every free tool on Elvyy, in one place. No limits, no signups.",
+    url: "https://elvyy.com/tools",
+  },
 };
 
 export default function ToolsPage() {
