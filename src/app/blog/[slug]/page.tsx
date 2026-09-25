@@ -89,6 +89,8 @@ export default async function BlogPostPage({
         <h1 className="mt-2 font-display text-4xl leading-tight text-ink">
           {post.title}
         </h1>
+         <p className="mt-4 text-sm text-ink-soft">
+          {new Date(post.publishedAt).toLocaleDateString("en-US", {
         <p className="mt-4 text-sm text-ink-soft">
           {new Date(post.publishedAt).toLocaleDateString("en-US", {
             year: "numeric",
