@@ -37,8 +37,11 @@ export async function generateMetadata({
 
   const post = getStaticPost(slug);
   if (!post) return {};
-  return { title: post.title, description: post.excerpt };
-}
+    return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${slug}` },
+  };
 
 const portableTextComponents: PortableTextComponents = {
   types: {
