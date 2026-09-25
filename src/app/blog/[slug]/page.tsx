@@ -27,21 +27,17 @@ export async function generateMetadata({
   if (isSanityConfigured) {
     const post = await getSanityPost(slug);
     if (!post) return {};
-        return {
+    return {
       title: post.seoTitle || post.title,
       description: post.seoDescription || post.excerpt,
-      alternates: { canonical: `/blog/${slug}` },
       robots: post.noIndex ? { index: false, follow: false } : undefined,
     };
   }
 
   const post = getStaticPost(slug);
   if (!post) return {};
-    return {
-    title: post.title,
-    description: post.excerpt,
-    alternates: { canonical: `/blog/${slug}` },
-  };
+  return { title: post.title, description: post.excerpt };
+}
 
 const portableTextComponents: PortableTextComponents = {
   types: {
@@ -89,8 +85,9 @@ export default async function BlogPostPage({
         <h1 className="mt-2 font-display text-4xl leading-tight text-ink">
           {post.title}
         </h1>
-         <p className="mt-4 text-sm text-ink-soft">
-          {new Date(post.publishedAt).toLocaleDateString("en-US", {
+        <p className="mt-2 text-sm text-ink-soft">
+          Written by <span className="text-ink">Fatima Batool</span>
+        </p>
         <p className="mt-4 text-sm text-ink-soft">
           {new Date(post.publishedAt).toLocaleDateString("en-US", {
             year: "numeric",
@@ -133,6 +130,9 @@ export default async function BlogPostPage({
       <h1 className="mt-2 font-display text-4xl leading-tight text-ink">
         {post.title}
       </h1>
+      <p className="mt-2 text-sm text-ink-soft">
+        Written by <span className="text-ink">Fatima Batool</span>
+      </p>
       <p className="mt-4 text-sm text-ink-soft">
         {new Date(post.date).toLocaleDateString("en-US", {
           year: "numeric",
