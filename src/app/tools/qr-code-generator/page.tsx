@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "QR Code Generator, 100% Free, No Login",
   description:
     "Turn any link or text into a downloadable QR code instantly. Unlimited free, no account needed.",
+  alternates: { canonical: "/tools/qr-code-generator" },
+  openGraph: {
+    title: "QR Code Generator, 100% Free, No Login",
+    description:
+      "Turn any link or text into a downloadable QR code instantly. Unlimited free, no account needed.",
+    url: "https://elvyy.com/tools/qr-code-generator",
+  },
 };
 
 export default function Page() {
