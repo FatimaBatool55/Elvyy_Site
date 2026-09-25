@@ -3,6 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   alternates: { canonical: "/privacy-policy" },
+  openGraph: {
+    title: "Privacy Policy",
+    description: "Privacy Policy for Elvyy.",
+    url: "https://elvyy.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
