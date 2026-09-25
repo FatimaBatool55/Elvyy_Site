@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Readability Score Checker, 100% Free, No Login",
   description:
     "Get grade level, sentence length, passive voice, and grammar check. Unlimited free, no account needed.",
+  alternates: { canonical: "/tools/readability-checker" },
+  openGraph: {
+    title: "Readability Score Checker, 100% Free, No Login",
+    description:
+      "Get grade level, sentence length, passive voice, and grammar check. Unlimited free, no account needed.",
+    url: "https://elvyy.com/tools/readability-checker",
+  },
 };
 
 export default function Page() {
