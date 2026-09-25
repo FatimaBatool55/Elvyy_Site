@@ -73,6 +73,20 @@ export default async function BlogPostPage({
 
     return (
       <article className="mx-auto max-w-2xl px-6 py-16">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: post.title,
+              description: post.excerpt,
+              datePublished: post.publishedAt,
+              author: { "@type": "Person", name: "Fatima Batool" },
+              publisher: { "@type": "Organization", name: "Elvyy" },
+            }),
+          }}
+        />
         <Link
           href="/blog"
           className="font-mono text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep"
