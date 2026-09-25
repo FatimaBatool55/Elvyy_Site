@@ -27,9 +27,10 @@ export async function generateMetadata({
   if (isSanityConfigured) {
     const post = await getSanityPost(slug);
     if (!post) return {};
-    return {
+        return {
       title: post.seoTitle || post.title,
       description: post.seoDescription || post.excerpt,
+      alternates: { canonical: `/blog/${slug}` },
       robots: post.noIndex ? { index: false, follow: false } : undefined,
     };
   }
