@@ -3,6 +3,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description: "What Elvyy is and who built it.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About",
+    description: "What Elvyy is and who built it.",
+    url: "https://elvyy.com/about",
+  },
 };
 
 export default function AboutPage() {
