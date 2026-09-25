@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "Study Plan Spreader, 100% Free, No Login",
   description:
     "Add deadlines and hours to get a day-by-day study schedule. Unlimited free, no account needed.",
+  alternates: { canonical: "/tools/study-plan-spreader" },
+  openGraph: {
+    title: "Study Plan Spreader, 100% Free, No Login",
+    description:
+      "Add deadlines and hours to get a day-by-day study schedule. Unlimited free, no account needed.",
+    url: "https://elvyy.com/tools/study-plan-spreader",
+  },
 };
-
 export default function Page() {
   const tool = getTool("study-plan-spreader")!;
   return (
