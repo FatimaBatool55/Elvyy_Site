@@ -119,7 +119,7 @@ export default async function BlogPostPage({
           />
         )}
 
-        <div className="prose prose-neutral mt-10 max-w-none text-[17px] leading-relaxed text-ink [&_p]:mb-5 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:mt-8 [&_h2]:mb-3">
+        <div className="prose prose-neutral mt-10 max-w-none text-[17px] leading-relaxed text-ink [&_p]:mb-5 [&_h2]:font-display [&_h2]:font-semibold [&_h2]:text-2xl [&_h2]:mt-8 [&_h2]:mb-3 [&_h3]:font-display [&_h3]:font-semibold [&_h3]:text-xl [&_h3]:mt-6 [&_h3]:mb-2 [&_h4]:font-display [&_h4]:font-semibold [&_h4]:text-lg [&_h4]:mt-5 [&_h4]:mb-2">
           <PortableText value={post.body as never} components={portableTextComponents} />
         </div>
       </article>
