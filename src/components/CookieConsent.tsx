@@ -33,7 +33,11 @@ export default function CookieConsent() {
           <a href="/privacy-policy" className="text-sage-deep hover:underline">
             Privacy Policy
           </a>{" "}
-          for details.
+          and{" "}
+          <a href="/cookie-policy" className="text-sage-deep hover:underline">
+            Cookie Policy
+          </a>
+          .
         </p>
         <div className="flex shrink-0 gap-2">
           <button
