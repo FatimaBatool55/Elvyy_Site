@@ -12,6 +12,7 @@ const siteLinks = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Service" },
   { href: "/admin", label: "Admin" },
+  { href: "/cookie-policy", label: "Cookie Policy" },
 ];
 
 export default function SiteFooter() {
