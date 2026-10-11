@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
 
         <section>
           <h2 className="font-display text-xl text-ink">What information we collect</h2>
-          <p className="mt-2">Elvyy's calculators and utilities, including the Word Counter, Age Calculator, GPA Calculator, Final Grade Calculator, Study Plan Spreader, and Task Splitter, run entirely inside your browser. Nothing you type into these tools is transmitted to or stored on our servers. The QR Code Generator sends only the text you provide to a third party rendering service solely to generate the image, and nothing is retained afterward. The AI powered tools, including the Meta Description Generator, Blog Title Generator, and Blog Generator, send the text you submit to the relevant AI provider solely to generate a response. This text is not stored by Elvyy once the response is returned.</p>
+          <p className="mt-2">Most of Elvyy's tools, including the GPA Calculator, Final Grade Calculator, Study Plan Spreader, Task Splitter, and Keyword Density Checker, run entirely inside your browser. Nothing you type into them is sent to or stored on our servers. The QR Code Generator sends only the text you provide to a third party rendering service to create the image, and nothing is retained afterward. The Readability Checker analyses your text in your browser, but if you press the grammar check button, that text is sent to the LanguageTool service to find errors. The AI powered tools, which are the Meta Description Generator, Blog Title Generator, and Blog Generator, send what you submit to an AI provider only to generate a response. Elvyy does not store this text once the response is returned.</p>
         </section>
 
         <section>
