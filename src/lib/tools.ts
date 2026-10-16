@@ -40,6 +40,14 @@ export const tools: Tool[] = [
     category: "Student",
   },
   {
+    slug: "mdcat-aggregate-calculator",
+    name: "MDCAT Aggregate Calculator",
+    short: "Calculate your MDCAT merit aggregate instantly",
+    description:
+      "Free MDCAT aggregate calculator using the official PMDC formula: 10% Matric, 40% FSc, 50% MDCAT. Check MBBS and BDS pass marks and find the score you need.",
+    category: "Student",
+  },
+  {
     slug: "task-splitter",
     name: "Group Project Task Splitter",
     short: "Fairly split tasks across group members",
