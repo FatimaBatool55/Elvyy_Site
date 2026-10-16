@@ -24,6 +24,14 @@ export const tools: Tool[] = [
     category: "Student",
   },
   {
+    slug: "nust-aggregate-calculator",
+    name: "NUST Aggregate Calculator",
+    short: "Calculate your NUST NET merit aggregate",
+    description:
+      "Free NUST aggregate calculator using the official 10% Matric, 15% FSc Part I and 75% NET formula. Find the NET marks you need for your target aggregate.",
+    category: "Student",
+  },
+  {
     slug: "final-grade-calculator",
     name: "Final Grade Calculator",
     short: "Find the score you need on what's left",
