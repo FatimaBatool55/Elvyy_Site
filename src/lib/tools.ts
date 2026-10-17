@@ -16,6 +16,14 @@ export const tools: Tool[] = [
     category: "Utility",
   },
   {
+    slug: "fast-aggregate-calculator",
+    name: "FAST Aggregate Calculator",
+    short: "Calculate your FAST NUCES merit aggregate",
+    description:
+      "Free FAST NUCES aggregate calculator for CS, Engineering and BBA programs using the official 10% Matric, 40% FSc and 50% entry test formula.",
+    category: "Student",
+  },
+  {
     slug: "gpa-calculator",
     name: "GPA Calculator",
     short: "Calculate GPA and plan future grades",
