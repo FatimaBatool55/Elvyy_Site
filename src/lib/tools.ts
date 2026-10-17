@@ -32,6 +32,14 @@ export const tools: Tool[] = [
     category: "Student",
   },
   {
+    slug: "giki-aggregate-calculator",
+    name: "GIKI Aggregate Calculator",
+    short: "Calculate your GIKI merit aggregate",
+    description:
+      "Free GIKI aggregate calculator using the official 15% Matric and 85% entry test formula. Find the test marks you need for your target aggregate.",
+    category: "Student",
+  },
+  {
     slug: "nust-aggregate-calculator",
     name: "NUST Aggregate Calculator",
     short: "Calculate your NUST NET merit aggregate",
