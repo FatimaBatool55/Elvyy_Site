@@ -16,6 +16,14 @@ export const tools: Tool[] = [
     category: "Utility",
   },
   {
+    slug: "jamb-aggregate-calculator",
+    name: "JAMB Aggregate Calculator",
+    short: "Calculate your JAMB UTME and Post UTME aggregate",
+    description:
+      "Free JAMB aggregate calculator for UTME, Post UTME and O'Level scores, with preset formulas and custom weights. Find the score you need for your target.",
+    category: "Student",
+  },
+  {
     slug: "fast-aggregate-calculator",
     name: "FAST Aggregate Calculator",
     short: "Calculate your FAST NUCES merit aggregate",
