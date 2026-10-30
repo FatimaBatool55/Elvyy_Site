@@ -16,6 +16,14 @@ export const tools: Tool[] = [
     category: "Utility",
   },
   {
+    slug: "kcse-mean-grade-calculator",
+    name: "KCSE Mean Grade Calculator",
+    short: "Calculate your KCSE mean grade and points",
+    description:
+      "Free KCSE mean grade and points calculator. Enter your subject grades to see aggregate points out of 84, your mean grade and the points needed for your target.",
+    category: "Student",
+  },
+  {
     slug: "jamb-aggregate-calculator",
     name: "JAMB Aggregate Calculator",
     short: "Calculate your JAMB UTME and Post UTME aggregate",
