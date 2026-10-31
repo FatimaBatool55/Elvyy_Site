@@ -16,6 +16,7 @@ export default function SiteHeader() {
     <header className="border-b border-line bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/70 sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="font-display text-2xl tracking-tight text-ink">
+          <Image src="/logo.png" alt="Elvyy" width={36} height={36} priority className="h-9 w-9" />
           elvyy<span className="text-sage">.</span>
         </Link>
         <nav className="hidden items-center gap-5 font-mono text-[12px] uppercase tracking-wide text-ink-soft lg:flex">
