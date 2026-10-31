@@ -16,6 +16,14 @@ export const tools: Tool[] = [
     category: "Utility",
   },
   {
+    slug: "attendance-calculator",
+    name: "Attendance Calculator",
+    short: "See how many classes you can miss",
+    description:
+      "Free attendance calculator. Find your attendance percentage, how many classes you can miss and how many you must attend to reach your required percentage, for every subject.",
+    category: "Student",
+  },
+  {
     slug: "kcse-mean-grade-calculator",
     name: "KCSE Mean Grade Calculator",
     short: "Calculate your KCSE mean grade and points",
