@@ -16,6 +16,14 @@ export const tools: Tool[] = [
     category: "Utility",
   },
   {
+    slug: "book-finish-date-calculator",
+    name: "Book Finish Date Calculator",
+    short: "Find the day you will finish your book",
+    description:
+      "Free book finish date calculator. Enter your pages and reading speed to see when you will finish, milestone dates, and the pages per day you need to hit a deadline.",
+    category: "Utility",
+  },
+  {
     slug: "honours-cgpa-calculator",
     name: "Honours CGPA Calculator",
     short: "Calculate your honours GPA and CGPA by year",
