@@ -16,6 +16,14 @@ export const tools: Tool[] = [
     category: "Utility",
   },
   {
+    slug: "honours-cgpa-calculator",
+    name: "Honours CGPA Calculator",
+    short: "Calculate your honours GPA and CGPA by year",
+    description:
+      "Free honours CGPA calculator for National University Bangladesh. Add courses by year, see your GPA and CGPA, and find the GPA you need in the remaining credits.",
+    category: "Student",
+  },
+  {
     slug: "attendance-calculator",
     name: "Attendance Calculator",
     short: "See how many classes you can miss",
