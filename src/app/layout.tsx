@@ -5,8 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://elvyy.com"
-                        logo: "https://elvyy.com/logo.png"),
+  metadataBase: new URL("https://elvyy.com"),
   title: {
     default: "Elvyy, Free tools & everyday reading",
     template: "%s",
@@ -59,6 +58,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Elvyy",
               url: "https://elvyy.com",
+              logo: "https://elvyy.com/logo.png",
               description:
                 "Free online tools and practical articles on money, health, productivity, and lifestyle.",
               founder: {
