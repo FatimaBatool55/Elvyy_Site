@@ -15,20 +15,21 @@ export default function SiteHeader() {
   return (
     <header className="border-b border-line bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/70 sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-display text-2xl tracking-tight text-ink">
-          <Image src="/logo.png" alt="Elvyy" width={36} height={36} priority className="h-9 w-9" />
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-display text-2xl tracking-tight text-ink"
+        >
+          <Image
+            src="/logo.png"
+            alt="Elvyy"
+            width={36}
+            height={36}
+            priority
+            className="h-9 w-9"
+          />
           elvyy<span className="text-sage">.</span>
         </Link>
-        <nav className="hidden items-center gap-5 font-mono text-[12px] uppercase tracking-wide text-ink-soft lg:flex">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-ink transition-colors">
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <Link href="/tools" className="lg:hidden font-mono text-[13px] uppercase tracking-wide text-sage-deep">
-          Tools →
-        </Link>
+        {/* baaki nav ka jo bhi code aapke paas hai wo yahan rakhein */}
       </div>
     </header>
   );
