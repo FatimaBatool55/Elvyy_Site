@@ -10,8 +10,7 @@ export const metadata: Metadata = {
     default: "Elvyy, Free tools & everyday reading",
     template: "%s",
   },
-  description:
-    "Free, unlimited-use tools for everyday tasks, plus a blog covering life, money, health, and more. No signups, no limits.",
+  description: "Free tools for students, writers and creators. GPA calculator, keyword checker, AI blog generator and more. No signup, no limits, forever free.",
   openGraph: {
     siteName: "Elvyy",
     type: "website",
