@@ -4,14 +4,14 @@ import GpaCalculator from "@/components/tools/GpaCalculator";
 import { getTool } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "GPA Calculator, 100% Free, No Login",
+  title: "GPA Calculator, Free Online, No Login Required",
   description:
-    "Calculate your GPA across courses and plan future grades. Unlimited free, no account needed.",
+    "Calculate your GPA instantly. Enter courses, credits and grades to get your grade point average. Plan what GPA you need in remaining courses. Free, unlimited, no account.",
   alternates: { canonical: "/tools/gpa-calculator" },
   openGraph: {
-    title: "GPA Calculator, 100% Free, No Login",
+    title: "GPA Calculator, Free Online, No Login Required",
     description:
-      "Calculate your GPA across courses and plan future grades. Unlimited free, no account needed.",
+      "Calculate your GPA instantly. Enter courses, credits and grades. Plan future GPA too. Free, unlimited, no account needed.",
     url: "https://elvyy.com/tools/gpa-calculator",
   },
 };
