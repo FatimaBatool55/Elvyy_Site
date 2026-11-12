@@ -4,9 +4,9 @@ import KeywordDensityChecker from "@/components/tools/KeywordDensityChecker";
 import { getTool } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "Keyword Density Checker, 100% Free, No Login",
-  description:
-    "Paste content to see keyword frequency and catch overstuffing. Unlimited free, no account needed.",
+  title: "Keyword Density Checker, Free, No Login, Instant Results",
+description:
+  "Check keyword density instantly. Paste your content to see how often each word and phrase appears. Flags keyword stuffing automatically. Free, unlimited, no account.",
   alternates: { canonical: "/tools/keyword-density-checker" },
   openGraph: {
     title: "Keyword Density Checker, 100% Free, No Login",
