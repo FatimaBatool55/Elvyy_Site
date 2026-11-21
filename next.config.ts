@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+        {
+          source: "/:path*",
+          has: [{ type: "host", value: "elvyy.com" }],
+          destination: "https://www.elvyy.com/:path*",
+          permanent: true,
+      },
       {
         source: "/tools/age-calculator",
         destination: "/tools",
