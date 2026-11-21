@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://elvyy.com"),
+  metadataBase: new URL("https://www.elvyy.com"),
   title: {
     default: "Elvyy, Free tools & everyday reading",
     template: "%s",
