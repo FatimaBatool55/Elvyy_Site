@@ -16,6 +16,14 @@ export const tools: Tool[] = [
     category: "Utility",
   },
   {
+    slug: "class-rank-calculator",
+    name: "Class Rank and Percentile Calculator",
+    short: "Convert rank to percentile or find the rank you need",
+    description:
+      "Free class rank and percentile calculator. Convert rank to percentile, find the rank needed for a target percentile, or paste class scores to see exactly where you stand.",
+    category: "Student",
+  },
+  {
     slug: "book-finish-date-calculator",
     name: "Book Finish Date Calculator",
     short: "Find the day you will finish your book",
