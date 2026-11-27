@@ -30,15 +30,26 @@ export async function generateMetadata({
     return {
       title: post.seoTitle || post.title,
       description: post.seoDescription || post.excerpt,
+      alternates: { canonical: `https://www.elvyy.com/blog/${slug}` },
+      openGraph: {
+        title: post.seoTitle || post.title,
+        description: post.seoDescription || post.excerpt,
+        url: `https://www.elvyy.com/blog/${slug}`,
+        type: "article",
+        publishedTime: post.publishedAt,
+      },
       robots: post.noIndex ? { index: false, follow: false } : undefined,
     };
   }
 
   const post = getStaticPost(slug);
   if (!post) return {};
-  return { title: post.title, description: post.excerpt };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `https://www.elvyy.com/blog/${post.slug}` },
+  };
 }
-
 const portableTextComponents: PortableTextComponents = {
   types: {
     image: ({ value }) => {
