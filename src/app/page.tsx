@@ -5,6 +5,21 @@ import { getSanityPosts } from "@/sanity/lib/queries";
 import { isSanityConfigured } from "@/sanity/lib/client";
 import ToolFinder from "@/components/ToolFinder";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Elvyy – Free Online Tools & Practical Articles",
+  description:
+    "Free tools for students, writers, creators, and everyday life. GPA calculator, QR code generator, aggregate calculators, SEO tools and more. No signup, no limits, forever free.",
+  alternates: { canonical: "https://www.elvyy.com" },
+  openGraph: {
+    title: "Elvyy – Free Online Tools & Practical Articles",
+    description:
+      "Free tools for students, writers, creators, and everyday life. No signup, no limits.",
+    url: "https://www.elvyy.com",
+  },
+};
+
 export const revalidate = 60;
 
 export default async function Home() {
