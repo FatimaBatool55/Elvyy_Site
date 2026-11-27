@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Elvyy, Free tools & everyday reading",
     description:
       "Free, unlimited-use tools for everyday tasks, plus a blog covering life, money, health, and more. No signups, no limits.",
-    url: "https://elvyy.com",
+    url: "https://www.elvyy.com",
   },
   twitter: {
     card: "summary_large_image",
