@@ -5,7 +5,7 @@ import { getSanityPosts } from "@/sanity/lib/queries";
 import { isSanityConfigured } from "@/sanity/lib/client";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = "https://elvyy.com";
+  const base = "https://www.elvyy.com"; 
   const staticRoutes = ["", "/tools", "/blog", "/about", "/contact", "/privacy-policy", "/terms"];
 
   const sanityPosts = isSanityConfigured ? await getSanityPosts() : [];
